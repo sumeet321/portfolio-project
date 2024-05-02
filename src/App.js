@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+document.addEventListener('DOMContentLoaded', function () {
+  const navToggle = document.querySelector('.nav-toggle');
+  const navLinks = document.querySelectorAll('.nav__link');
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+  navToggle.addEventListener('click', function () {
+      document.body.classList.toggle('nav-open');
+  });
 
-export default App;
+  navLinks.forEach(function (link) {
+      link.addEventListener('click', function () {
+          document.body.classList.remove('nav-open');
+      });
+  });
+});
+
+// Dark Mode Toggle Functionality
+const darkModeToggle = document.querySelector('.dark-mode-toggle');
+const body = document.body;
+
+darkModeToggle.addEventListener('click', () => {
+    body.classList.toggle('dark-mode'); // Toggle dark mode class on body
+    darkModeToggle.classList.toggle('light-mode'); // Toggle light mode class on button
+});
