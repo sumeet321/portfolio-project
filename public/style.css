@@ -114,7 +114,7 @@ h3 { font-size: var(--fs-h3) }
 
 	
 .section__subtitle{
-	margin: 0;
+	margin: 1;
 	font-size: var(--fs-h3)
 }
 
